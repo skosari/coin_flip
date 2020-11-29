@@ -5,7 +5,8 @@ import dimeH from './images/dime-heads.png'
 import dimeT from './images/dime-tails.png'
 import quarterH from './images/quarter-heads.png'
 import quarterT from './images/quarter-tails.png'
-
+import happyFace from './images/happy-face.png'
+import happyFace2 from './images/happy-face2.png'
 
 class Flip extends Component{
     static defaultProps = {
@@ -17,9 +18,7 @@ class Flip extends Component{
             flips: 0,
             heads: 0,
             tails: 0,
-            headsOrTails: true,
-            quarter: {heads: './images/quarter-heads.png', tails: './images/qaurter-tails.png'},
-            dime: {heads: './images/dime-heads.png', tails: './images/dime-tails.png'}
+            headsOrTails: true
         }
         
     }
@@ -54,6 +53,9 @@ class Flip extends Component{
                 var heads = dimeH
                 var tails = dimeT
                 break;
+            default:
+                var heads = happyFace;
+                var tails = happyFace2;
         }
         return(
             <div className='Flip'>

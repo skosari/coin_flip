@@ -4,6 +4,7 @@ import './App.css';
 function App() {
   return (
     <div className="App">
+      <Flip />
       <Flip coin={'dime'} />
       <Flip coin={'quarter'} />
     </div>
