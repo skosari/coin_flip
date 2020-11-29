@@ -1,6 +1,11 @@
 import React, {Component} from 'react'
 import './Flip.css'
 import Coin from './Coin'
+import dimeH from './images/dime-heads.png'
+import dimeT from './images/dime-tails.png'
+import quarterH from './images/quarter-heads.png'
+import quarterT from './images/quarter-tails.png'
+
 
 class Flip extends Component{
     static defaultProps = {
@@ -35,18 +40,28 @@ class Flip extends Component{
             })) 
         }
         
-        return console.log
     }
     handleClick = () => {
         this.flip()
     }
     render(){
-
+        switch (this.props.coin){
+            case 'quarter':
+                var heads = quarterH
+                var tails = quarterT
+                break;
+            case 'dime':
+                var heads = dimeH
+                var tails = dimeT
+                break;
+        }
         return(
             <div className='Flip'>
                 <Coin 
                     coin={this.props.coin} 
-                    headsOrTails={this.state.headsOrTails}     
+                    headsOrTails={this.state.headsOrTails}
+                    heads={heads}
+                    tails={tails}     
                 />
                 <span>Out of {this.state.flips} <b>flips</b> there have been {this.state.heads} <b>heads</b> and {this.state.tails} <b>tails</b></span>
                 <button onClick={this.handleClick}>Flip</button>
